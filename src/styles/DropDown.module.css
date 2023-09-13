@@ -1,0 +1,107 @@
+.container {
+  position: relative;
+  padding: 0.25rem;
+  width: 10rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.dropdown {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 5.5rem;
+}
+
+.title:hover,
+.title:hover>p {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.dropdownItems {
+  position: absolute;
+  top: 1.875rem;
+  right: 0;
+  z-index: 1;
+  /* Ensure it's on top of other elements */
+  padding: 1.25rem;
+  border-radius: 0.313rem;
+  background: #ffffff;
+  /* Use hex color for consistency */
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  box-shadow: 0.125rem 0.125rem 0.625rem rgba(0, 0, 0, 0.2),
+    -0.125rem -0.125rem 0.625rem rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+/* Add hover effect for better user experience */
+.dropdownItems:hover {
+  box-shadow: 0.25rem 0.25rem 0.9375rem rgba(0, 0, 0, 0.3),
+    -0.25rem -0.25rem 0.9375rem rgba(0, 0, 0, 0.3);
+}
+
+/* Add transition for smooth animations */
+.dropdownItems {
+  transition: box-shadow 0.3s ease;
+}
+
+.element {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 0.313rem;
+  font-weight: 300;
+}
+
+.element:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.dropdownIcon {
+  transition: 0.5s;
+}
+
+.dropdownIcon.opened {
+  transform: rotateX(180deg)
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .title {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  picture>img {
+    height: 100%;
+  }
+
+
+  .title:hover,
+  .title:hover>p {
+    text-decoration: none;
+  }
+
+  .element {
+    color: hsl(208, 49%, 24%);
+  }
+}
